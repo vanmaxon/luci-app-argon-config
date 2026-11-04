@@ -59,3 +59,9 @@ if [ -z "$package_file" ]; then
 	echo 'Build did not produce luci-app-argon-config package' >&2
 	exit 1
 fi
+
+theme_file="$(find bin/packages -type f \( -name 'luci-theme-argon_*.ipk' -o -name 'luci-theme-argon-*.apk' \) -print -quit)"
+if [ -z "$theme_file" ]; then
+	echo 'Build did not produce luci-theme-argon package' >&2
+	exit 1
+fi

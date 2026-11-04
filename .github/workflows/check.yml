@@ -45,7 +45,7 @@ jobs:
         uses: actions/checkout@v7
         with:
           repository: jerrykuku/luci-theme-argon
-          ref: 2565c3ca7c06253f68a2ea44d9ea00839ced1484
+          ref: 378db9f62bdc843cc71c58a9c01f94b817508c66 # Argon 3.1.2
           path: bin/luci-theme-argon
       - name: Prepare
         run: |
@@ -64,7 +64,9 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: argon-config-${{ matrix.version }}-${{ matrix.format }}
-          path: bin/packages/*/*/*argon-config*.${{ matrix.format }}
+          path: |
+            bin/packages/*/*/*argon-config*.${{ matrix.format }}
+            bin/packages/*/*/luci-theme-argon*.${{ matrix.format }}
           if-no-files-found: error
       - name: Upload Log
         if: always()
