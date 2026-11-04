@@ -45,7 +45,7 @@ jobs:
         uses: actions/checkout@v7
         with:
           repository: vanmaxon/luci-theme-argon
-          ref: bc5dd48bf2b04496913bcfaaf4d67124d0c26daf
+          ref: 195188bbacd173d071c8bd2d1a9bfab22f3aebe8
           path: bin/luci-theme-argon
       - name: Test wallpaper source and settings
         run: node --test bin/luci-theme-argon/tests/argon-config.test.js bin/luci-theme-argon/tests/waifu-wallpaper.test.js
