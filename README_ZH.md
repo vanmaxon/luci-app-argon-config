@@ -12,7 +12,7 @@ Argon 3.0 已将设置页、背景、Logo 和 RPC 服务集成到 [luci-theme-ar
 
 ## OpenWrt 25.12 和在线壁纸
 
-本仓库的构建流程使用 OpenWrt 25.12.5 SDK 生成 APK 包，并固定搭配 Argon 3.1.2 主题。构建产物包含主题、迁移包和语言包；也可以直接从[主题发行页](https://github.com/jerrykuku/luci-theme-argon/releases)获取同一发行版的包。全新安装只需主题，使用 APK v3 的路由器先执行 `apk update`，再安装下载的主题包：
+本仓库的构建流程使用 OpenWrt 25.12.5 SDK 生成 APK 包，并固定搭配[主题 fork](https://github.com/vanmaxon/luci-theme-argon)。构建产物包含主题、迁移包和语言包。要使用下述 Waifu 功能，请使用本仓库 Actions 构建产物或本 fork 的发行包，而非上游主题发行包。全新安装只需主题，使用 APK v3 的路由器先执行 `apk update`，再安装下载的主题包：
 
 ```sh
 apk add --allow-untrusted ./luci-theme-argon-*.apk
@@ -21,3 +21,5 @@ apk add --allow-untrusted ./luci-theme-argon-*.apk
 如果已安装旧版独立配置插件，请先按照上面的主题迁移说明安装对应的迁移包，再安装主题。需要中文界面时，还可安装同一发行版的 `luci-i18n-argon-config-zh-cn` APK。
 
 在 **系统 → Argon Config** 的壁纸来源中选择 **Unsplash** 或 **Wallhaven**，保存并应用。Unsplash 需要在页面中填写从 [Unsplash Developers](https://unsplash.com/developers) 获取的 Access Key；Wallhaven 的普通随机壁纸不需要密钥。路由器需要能访问对应服务，浏览器也需要能访问返回的图片地址。请求失败时会回退到本地背景；在线图片地址通常缓存 12 小时。
+
+选择 **Waifu (NEKOS.BEST / Wallhaven)** 可使用全年龄二次元图片，无需密钥：竖屏优先使用 NEKOS.BEST，横屏使用 Wallhaven 动漫分类。Unsplash、Wallhaven 和 Waifu 会随浏览器窗口横竖方向切换对应壁纸；Bing 和本地背景保持原有方式。Waifu.im 曾公告停止服务，未用作图片源。主题内的上游在线更新可能覆盖这些改动，请使用本 fork 构建的主题包更新。

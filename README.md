@@ -12,7 +12,7 @@ The theme repository supplies `luci-i18n-argon-config-*` translations. Argon 2.x
 
 ## OpenWrt 25.12 and online wallpapers
 
-The build uses the OpenWrt 25.12.5 SDK to produce APK packages together with the pinned Argon 3.1.2 theme. Artifacts contain the theme, migration package and translations; matching packages are also available from the [theme releases](https://github.com/jerrykuku/luci-theme-argon/releases). A fresh install only needs the theme. On a router using APK v3, run `apk update`, then install the downloaded theme:
+The build uses the OpenWrt 25.12.5 SDK to produce APK packages together with the pinned [theme fork](https://github.com/vanmaxon/luci-theme-argon). Artifacts contain the theme, migration package and translations. For the Waifu feature below, use this repository's Actions artifacts or fork releases rather than upstream theme releases. A fresh install only needs the theme. On a router using APK v3, run `apk update`, then install the downloaded theme:
 
 ```sh
 apk add --allow-untrusted ./luci-theme-argon-*.apk
@@ -21,3 +21,5 @@ apk add --allow-untrusted ./luci-theme-argon-*.apk
 If the old standalone configuration plugin is installed, follow the theme migration instructions above and install the matching migration package before the theme. Install the appropriate `luci-i18n-argon-config-<language>` APK from the same release for translations.
 
 Under **System → Argon Config**, choose **Unsplash** or **Wallhaven** as the wallpaper source, then save and apply. Unsplash requires an Access Key from [Unsplash Developers](https://unsplash.com/developers); ordinary random Wallhaven wallpapers do not require a key. The router must be able to reach the service and the browser must be able to reach the returned image URL. Failed requests fall back to a local background; online image URLs are normally cached for 12 hours.
+
+Select **Waifu (NEKOS.BEST / Wallhaven)** for SFW anime images without a key: portrait screens prefer NEKOS.BEST, while landscape screens use Wallhaven's anime category. Unsplash, Wallhaven and Waifu switch images with the browser's viewport orientation; Bing and local backgrounds keep their existing behavior. Waifu.im announced its shutdown and is not used. Upstream online theme updates can replace these changes; update using a package built from this fork.

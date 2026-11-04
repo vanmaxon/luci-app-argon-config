@@ -44,9 +44,11 @@ jobs:
       - name: Checkout theme dependency
         uses: actions/checkout@v7
         with:
-          repository: jerrykuku/luci-theme-argon
-          ref: 378db9f62bdc843cc71c58a9c01f94b817508c66 # Argon 3.1.2
+          repository: vanmaxon/luci-theme-argon
+          ref: bc5dd48bf2b04496913bcfaaf4d67124d0c26daf
           path: bin/luci-theme-argon
+      - name: Test wallpaper source and settings
+        run: node --test bin/luci-theme-argon/tests/argon-config.test.js bin/luci-theme-argon/tests/waifu-wallpaper.test.js
       - name: Prepare
         run: |
           mkdir -p bin/luci-app-argon-config
